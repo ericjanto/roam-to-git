@@ -80,7 +80,7 @@ def main():
                 return
             raws = unzip_markdown_archive(markdown_zip_path)
             save_markdowns(git_path / "markdown", raws)
-            unzip_and_save_json_archive(json_zip_path, git_path / "backups" / "json")
+            # unzip_and_save_json_archive(json_zip_path, git_path / "json")
 
     formatted = format_markdown(read_markdown_directory(git_path / "markdown"))
     save_markdowns(git_path / "formatted", formatted)
