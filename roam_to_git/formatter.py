@@ -32,4 +32,4 @@ def format_markdown(contents: Dict[str, str]) -> Dict[str, str]:
     return out
 
 def add_title(content: str, file_name: str):
-    return "# {file_name}\n\n{content}"
+    return {file_name} + "\n\n" + {content}

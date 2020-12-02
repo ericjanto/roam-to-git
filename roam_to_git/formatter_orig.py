@@ -46,7 +46,7 @@ def format_markdown(contents: Dict[str, str]) -> Dict[str, str]:
         #content = format_to_do(content)
         #link_prefix = "../" * sum("/" in char for char in file_name)
         #content = format_link(content, link_prefix=link_prefix)
-        content = "# {file_name}\n\n{content}"
+        content = {file_name} + "\n\n" + {content}
         if len(content) > 0:
             out[file_name] = content
 
