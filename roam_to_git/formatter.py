@@ -40,13 +40,12 @@ def format_markdown(contents: Dict[str, str]) -> Dict[str, str]:
     for file_name, content in contents.items():
         # We add the backlinks first, because they use the position of the caracters
         # of the regex matchs
-        #content = add_back_links(content, back_links[file_name])
+        content = add_back_links(content, back_links[file_name])
 
         # Format content. Backlinks content will be formatted automatically.
-        #content = format_to_do(content)
-        #link_prefix = "../" * sum("/" in char for char in file_name)
-        #content = format_link(content, link_prefix=link_prefix)
-        content = f"# {file_name}\n\n{content}"
+        content = format_to_do(content)
+        link_prefix = "../" * sum("/" in char for char in file_name)
+        content = format_link(content, link_prefix=link_prefix)
         if len(content) > 0:
             out[file_name] = content
 
